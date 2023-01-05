@@ -4,8 +4,6 @@ async function principal(name){
 	let nombre = await saludar(name)
 	await talk()
 	await talk()
-	await talk()
-	await talk()
 	await adios(nombre)
 }
 
@@ -18,11 +16,11 @@ async function saludar(name){
 	})
 }
 
-async function talk(name) {
+async function talk() {
 	return new Promise((res,rej) => {
 		setTimeout(function() {
 			console.log("estoy diciendo algo...");
-			res(name)
+			res()
 		}, 2000);
 	});
 }
@@ -32,8 +30,10 @@ async function adios(name) {
 		setTimeout(function() {
 			console.log(`Adios ${name}`);
 			res(name)
+			console.log('Fin del proceso');
 		}, 1500);
 	})
 }
 
+console.log('Inicio del proceso');
 principal(process.env.NAME)
