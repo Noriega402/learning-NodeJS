@@ -40,3 +40,26 @@ __Nota:__ Debes crear un archivo JS para poder visualizarlo luego en consola
     ```js
     console.log(__filename)
     ```
+## Creando archivos de texto
+Para poder crearlos utilizamos el siguiente codigo:
+```js
+const fs = require('fs');
+
+function write(route, content, callback){
+    fs.writeFile(route, content, function(err){
+        err
+            ? callback('Ocurrio un error al escribir en el archivo: ' + err)
+            : callback('Se pudo escribir correctamente en el archivo')
+    })
+}
+
+let writing = "Estoy ingresando texto en el archivo desde Node JS!"
+write(__dirname + '/example.txt', writing,console.log)
+```
+
+Explicacion de los parametros que recibe la funcion _write(route, content, callback)_
+- __route__ sera la ruta en donde se guardara el archivo o en donde se buscara el archivo,
+- __content__ es el contenido que se insertara en el archivo a crear o buscar dentro de la ruta establecida.
+- __callback__ es para poder hacer llamar a la accion de mostrar mensaje en consola
+
+- __Nota:__ cuando se define la ruta, el programa se encarga de ver si el archivo existe o no, en caso de que exista sobre escribe lo que se tiene dentro, en caso de que no exista, lo crea e inserta el contenido.
