@@ -1,0 +1,3 @@
+hola, este archivo se esta abriendo desde Node JS con file system
+
+esta es otra linea de texto
