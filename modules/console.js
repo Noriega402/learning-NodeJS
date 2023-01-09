@@ -30,8 +30,7 @@ console.log("Otra respuesta 2");
 console.log("Otra respuesta 3");
 console.groupEnd("Fin del saludo");
 
-console.count("veces")
-console.count("veces")
-console.count("veces")
-console.count("veces")
-
+console.log("Inicio del bucle");
+for(let i = 0; i < 50; i++){
+    console.count("veces") //contar N cantidad de veces
+}
