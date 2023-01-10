@@ -1,9 +1,14 @@
 const http = require('http');
+const host = "127.0.0.1";
+const port = 3000;
 
-http.createServer(function(request, response){
-    console.log("Nueva Peticion");
+const server = http.createServer(function(request, response){
     console.log(request.url);
+    response.writeHead(200,{'Content-Type':'text/plain'});// agregando cabeceras a la pagina
+    response.write("Mi primer servidor montado con Node JS!"); //mensaje en la pagina principal
     response.end();
-}).listen(3000);
+});
 
-console.log("Escuchando el el puerto 3,000");
+server.listen(port, host, () => {
+    console.log(`Escuchando en: ${host}:${port}`);
+})
