@@ -9,6 +9,4 @@ const server = http.createServer(function(request, response){
     response.end();
 });
 
-server.listen(port, host, () => {
-    console.log(`Escuchando en: ${host}:${port}`);
-})
+server.listen(port, host, () => console.log(`Escuchando en: ${host}:${port}`))
