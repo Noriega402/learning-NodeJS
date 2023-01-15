@@ -63,3 +63,56 @@ Explicacion de los parametros que recibe la funcion _write(route, content, callb
 - __callback__ es para poder hacer llamar a la accion de mostrar mensaje en consola
 
 - __Nota:__ cuando se define la ruta, el programa se encarga de ver si el archivo existe o no, en caso de que exista sobre escribe lo que se tiene dentro, en caso de que no exista, lo crea e inserta el contenido.
+
+## Crear un servidor con Node JS
+Utilizamos el siguiente codigo:
+```js
+const http = require('http');
+const host = "127.0.0.1";
+const port = 3000;
+
+const server = http.createServer(function(request, response){
+    console.log(request.url);
+    response.writeHead(200,{'Content-Type':'text/plain'});// agregando cabeceras a la pagina
+    response.write("Mi primer servidor montado con Node JS!"); //mensaje en la pagina principal
+    response.end();
+});
+
+server.listen(port, host, () => console.log(`Escuchando en: ${host}:${port}`))
+```
+
+- **host:** es para crear el servidor en nuestra maquina (a nivel local = localhost)
+- **port:** es para indicarle a node en que puerto puede abrir el servidor para nuestra aplicacion.
+
+Luego de ver el mensaje de _"Escuchando en: 127.0.0.1:3000_ podemos ir a nuestro navegador e ingresar una de estas dos opciones:
+
+1. <pre>localhost:3000</pre>
+1. <pre>127.0.0.1:3000</pre>
+
+## Comandos para instalacion de dependencias
+### puppeteer
+Para scrapping
+```bash
+npm init -y
+```
+```bash
+npm i puppeteer
+```
+
+### bcrypt
+Es para encriptar texto (password)
+```hash
+npm i bcrypt
+```
+
+### moment
+Es para manejos de horas y fechas
+```hash
+npm i moment
+```
+
+### sharp
+Para manejo de imagenes con node
+```bash
+npm i sharp
+```
