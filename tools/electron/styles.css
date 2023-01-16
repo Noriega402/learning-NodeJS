@@ -1,0 +1,23 @@
+body{
+    background-color: #24385b;
+    color: #ffffff;
+}
+div{
+    width: 100%;
+    margin: 0 auto;
+}
+.btn{
+    border: none;
+    padding: 12px 20px;
+    background-color: #98ca3f;
+    color:#24385b;
+    font-weight: bold;
+    transition: .5s all;
+    border-radius: 8px;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: #6e942b;
+    transition: .5s all;
+    transform: scale(1.2);
+}
